@@ -88,8 +88,156 @@ button { cursor: pointer; font-family: inherit; }
 .arrival-copy > p { color: var(--primary); letter-spacing: .27em; font-size: 12px; font-weight: 700; }
 .arrival-copy h2 { margin: 14px 0; font: 500 clamp(3rem, 5vw, 5.5rem)/.85 var(--font-display); }
 .arrival-copy > span { display: block; margin: 18px 0 22px; font-size: 14px; }
-.story-section { text-align: center; padding: 80px 24px 100px; background: var(--primary); color: var(--primary-foreground); }
-.story-section p { letter-spacing: .24em; text-transform: uppercase; font-size: 11px; }.story-section h2 { margin: 18px 0 0; font: 500 clamp(2.8rem, 5vw, 5rem)/1 var(--font-display); }
+.caryophy-story {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 560px;
+  place-items: center;
+  overflow: hidden;
+  padding: 76px 28px 70px;
+  color: #f8f6ed;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 43%, color-mix(in oklab, #718044 28%, transparent), transparent 58%),
+    linear-gradient(112deg, #202c14 0%, #354321 48%, #1d2b14 100%);
+}
+.caryophy-story::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 36%, color-mix(in oklab, #10190c 36%, transparent) 100%);
+  content: "";
+  pointer-events: none;
+}
+.caryophy-story__content {
+  width: min(930px, 100%);
+  margin: auto;
+}
+.caryophy-story.is-visible .caryophy-story__content {
+  animation: caryophy-story-reveal .85s cubic-bezier(.2, .65, .25, 1) both;
+}
+.caryophy-story__eyebrow {
+  margin: 0;
+  color: #e0dfbd;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  line-height: 1.6;
+}
+.caryophy-story h2 {
+  margin: 30px 0 22px;
+  color: #f8f6ed;
+  font-family: var(--font-display);
+  font-size: 68px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1;
+  word-spacing: normal;
+}
+.caryophy-story__divider,
+.caryophy-story__footer-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: #c9cf9e;
+}
+.caryophy-story__divider span,
+.caryophy-story__footer-rule span {
+  width: min(180px, 22vw);
+  height: 1px;
+  background: color-mix(in oklab, #d8d5aa 72%, transparent);
+}
+.caryophy-story h3 {
+  margin: 22px 0 14px;
+  color: #f2f0df;
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.4;
+  word-spacing: normal;
+}
+.caryophy-story__description {
+  max-width: 860px;
+  margin: 0 auto;
+  color: #eeeddf;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.85;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+.caryophy-story__cta {
+  min-height: 48px;
+  margin-top: 30px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border: 1px solid #f8f6ed;
+  border-radius: 5px;
+  background: #f8f6ed;
+  color: #34431f;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-decoration: none;
+  transition: transform .25s ease, background-color .25s ease, color .25s ease, box-shadow .25s ease;
+}
+.caryophy-story__cta:hover {
+  transform: translateY(-2px);
+  background: transparent;
+  color: #f8f6ed;
+  box-shadow: 0 8px 24px color-mix(in oklab, #10190c 32%, transparent);
+}
+.caryophy-story__footer-rule {
+  margin-top: 28px;
+  gap: 14px;
+}
+.caryophy-story__footer-rule span {
+  width: min(155px, 19vw);
+}
+.caryophy-story__botanical {
+  position: absolute;
+  top: 50%;
+  width: 230px;
+  height: 330px;
+  color: #d6d9ad;
+  opacity: .27;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.caryophy-story__botanical--left { left: 12px; }
+.caryophy-story__botanical--right { right: 12px; transform: translateY(-50%) scaleX(-1); }
+.caryophy-story__sprout {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  stroke-width: .65;
+  animation: caryophy-botanical-sway 8s ease-in-out infinite;
+}
+.caryophy-story__leaf {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  stroke-width: .7;
+}
+.caryophy-story__leaf--one { top: 17%; right: 8%; transform: rotate(22deg); }
+.caryophy-story__leaf--two { bottom: 16%; left: 8%; transform: rotate(-38deg); }
+@keyframes caryophy-story-reveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes caryophy-botanical-sway {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1.5deg); }
+}
 .modal-backdrop { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; background: color-mix(in oklab, var(--foreground) 68%, transparent); backdrop-filter: blur(12px); padding: 20px; }
 .modal-close { position: fixed; right: 26px; top: 26px; width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--background); color: var(--foreground); }
 .film-card { width: min(620px, 100%); min-height: 370px; padding: 60px 30px; display: grid; place-items: center; align-content: center; text-align: center; border-radius: 18px; color: var(--foreground); background: var(--background); box-shadow: 0 30px 90px var(--shadow); }
@@ -110,6 +258,10 @@ button { cursor: pointer; font-family: inherit; }
   .category-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }.category-card { flex: 0 0 42%; scroll-snap-align: start; }
   .arrival-section { min-height: 430px; }.arrival-section > img { object-position: 38% center; }.arrival-section::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 10%, color-mix(in oklab, var(--background) 88%, transparent) 68%); }
   .arrival-copy { z-index: 2; left: 49%; right: 20px; }.arrival-copy h2 { font-size: 3.5rem; }
+  .caryophy-story { min-height: 520px; padding: 70px 38px; }
+  .caryophy-story h2 { font-size: 54px; }
+  .caryophy-story h3 { font-size: 24px; }
+  .caryophy-story__botanical { width: 170px; height: 270px; opacity: .18; }
 }
 
 @media (max-width: 560px) {
@@ -121,9 +273,27 @@ button { cursor: pointer; font-family: inherit; }
   .shop-section { padding: 28px 16px 22px; }.section-heading h2 { font-size: 1.7rem; }.section-heading button { font-size: 9px; }.category-card { flex-basis: 63%; }
   .arrival-section { margin: 0 16px 24px; min-height: 440px; }.arrival-section > img { object-position: 31% center; }.arrival-section::after { background: linear-gradient(0deg, color-mix(in oklab, var(--background) 94%, transparent) 0%, transparent 80%); }
   .arrival-copy { top: auto; bottom: 25px; left: 24px; right: 24px; transform: none; }.arrival-copy h2 { font-size: 3.1rem; }.arrival-copy > span { margin: 12px 0 16px; }
+  .caryophy-story { min-height: 0; padding: 66px 22px 58px; }
+  .caryophy-story h2 { margin: 24px 0 20px; font-size: 40px; }
+  .caryophy-story h3 { margin: 20px 0 12px; font-size: 22px; line-height: 1.45; }
+  .caryophy-story__eyebrow { max-width: 290px; margin: 0 auto; font-size: 10px; letter-spacing: .14em; }
+  .caryophy-story__description { font-size: 14px; line-height: 1.8; }
+  .caryophy-story__botanical { width: 112px; height: 205px; opacity: .1; }
+  .caryophy-story__botanical--left { left: -62px; }
+  .caryophy-story__botanical--right { right: -62px; }
+  .caryophy-story__leaf { width: 48px; height: 48px; }
+  .caryophy-story__divider { gap: 12px; }
+  .caryophy-story__divider span { width: 48px; }
+  .caryophy-story__cta { width: min(100%, 300px); margin-top: 24px; }
+  .caryophy-story__footer-rule { margin-top: 24px; }
+  .caryophy-story__footer-rule span { width: 66px; }
 }
 
-@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+  .caryophy-story__sprout { animation: none; }
+  .caryophy-story.is-visible .caryophy-story__content { animation: none; }
+}
 
 /* Store pages */
 .store-header { position: sticky; top: 0; z-index: 30; background: color-mix(in oklab, var(--background) 92%, transparent); border-bottom: 1px solid var(--border); backdrop-filter: blur(18px); }

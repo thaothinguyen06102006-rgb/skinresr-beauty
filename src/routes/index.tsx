@@ -9,10 +9,11 @@ import {
   Menu,
   Play,
   Search,
+  Sprout,
   Sparkles,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import heroImage from "@/assets/about-skincare.jpg";
 import cleanserImage from "@/assets/product-cleansing-foam.jpg";
@@ -49,6 +50,27 @@ function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
+  const storyRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const section = storyRef.current;
+    if (!section) return;
+
+    if (!("IntersectionObserver" in window)) {
+      section.classList.add("is-visible");
+      return;
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        section.classList.add("is-visible");
+        observer.disconnect();
+      }
+    }, { threshold: 0.18 });
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   const exploreProducts = () => document.querySelector("#categories")?.scrollIntoView({ behavior: "smooth" });
   return (
@@ -125,22 +147,30 @@ function Index() {
         </div>
       </section>
 
-<section className="story-section" id="story">
-  <p className="story-label">MỘT TRANG GIỚI THIỆU CÁ NHÂN</p>
+      <section className="caryophy-story" id="story" ref={storyRef} aria-labelledby="caryophy-story-title">
+        <div className="caryophy-story__botanical caryophy-story__botanical--left" aria-hidden="true">
+          <Sprout className="caryophy-story__sprout" />
+          <Leaf className="caryophy-story__leaf caryophy-story__leaf--one" />
+          <Leaf className="caryophy-story__leaf caryophy-story__leaf--two" />
+        </div>
+        <div className="caryophy-story__botanical caryophy-story__botanical--right" aria-hidden="true">
+          <Sprout className="caryophy-story__sprout" />
+          <Leaf className="caryophy-story__leaf caryophy-story__leaf--one" />
+          <Leaf className="caryophy-story__leaf caryophy-story__leaf--two" />
+        </div>
 
-  <div className="story-content">
-    <h2>SKINREST-BEAUTY</h2>
-
-    <p className="story-description">
-      Caryophy là thương hiệu mỹ phẩm chăm sóc da đến từ Hàn Quốc,
-      thành lập năm 2012 và đã đứng vững hơn 10 năm trên thị trường.
-      Thương hiệu nổi tiếng với các sản phẩm làm dịu da, ngăn ngừa
-      và hỗ trợ chăm sóc da mụn, được phân phối chính hãng tại Việt Nam.
-      Điểm nổi bật của thương hiệu là định hướng sử dụng các thành phần
-      có nguồn gốc thực vật, hướng đến sự an toàn và dịu nhẹ cho làn da.
-    </p>
-  </div>
-</section>
+        <div className="caryophy-story__content">
+          <p className="caryophy-story__eyebrow">MỘT HÀNH TRÌNH CHĂM SÓC LÀN DA</p>
+          <h2 id="caryophy-story-title">SKINREST BEAUTY</h2>
+          <div className="caryophy-story__divider" aria-hidden="true"><span /><Leaf size={19} strokeWidth={1.25} /><span /></div>
+          <h3>Khám phá vẻ đẹp từ thiên nhiên cùng Caryophy</h3>
+          <p className="caryophy-story__description">
+            Caryophy là thương hiệu mỹ phẩm chăm sóc da đến từ Hàn Quốc, thành lập năm 2012, với các sản phẩm hướng đến chăm sóc, làm dịu và hỗ trợ cải thiện làn da mụn. Thương hiệu chú trọng các thành phần có nguồn gốc thực vật, mang đến giải pháp chăm sóc da nhẹ nhàng, phù hợp với nhu cầu của người tiêu dùng.
+          </p>
+          <Link className="caryophy-story__cta" to="/about">KHÁM PHÁ THƯƠNG HIỆU <ArrowRight size={17} /></Link>
+          <div className="caryophy-story__footer-rule" aria-hidden="true"><span /><Leaf size={16} strokeWidth={1.2} /><span /></div>
+        </div>
+      </section>
       {videoOpen && (
         <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="Phim về bộ sưu tập">
           <button className="modal-close" onClick={() => setVideoOpen(false)} aria-label="Đóng video"><X /></button>
