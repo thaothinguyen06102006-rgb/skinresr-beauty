@@ -1,0 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageHero, ProductGrid, StoreLayout } from "@/components/storefront";
+import { products } from "@/lib/products";
+export const Route = createFileRoute("/new-arrivals")({ head: () => ({ meta: [{ title: "Danh mục sản phẩm | SKINREST-BEAUTY" }, { name: "description", content: "Danh mục sản phẩm chăm sóc da được giới thiệu trên SKINREST-BEAUTY." }, { property: "og:title", content: "Danh mục sản phẩm | SKINREST-BEAUTY" }, { property: "og:description", content: "Thông tin tham khảo về các sản phẩm chăm sóc da." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: () => <StoreLayout><PageHero eyebrow="THÔNG TIN THAM KHẢO" title="Danh mục sản phẩm" copy="Tìm hiểu thêm về các sản phẩm được giới thiệu trên trang."/><section className="catalog-section"><ProductGrid items={products.slice(4)}/></section></StoreLayout> });

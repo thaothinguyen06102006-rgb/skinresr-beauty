@@ -1,0 +1,8 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
+import { PageHero, StoreLayout } from "@/components/storefront";
+import cleanser from "@/assets/product-ampoule.jpg";
+import serum from "@/assets/product-portulaca-mask.jpg";
+import cream from "@/assets/product-sunscreen.jpg";
+export const Route = createFileRoute("/collections")({ head: () => ({ meta: [{ title: "Bộ sưu tập chăm sóc da | SKINREST-BEAUTY" }, { name: "description", content: "Khám phá bộ sưu tập SKINREST-BEAUTY được tuyển chọn theo chu trình và nhu cầu làn da." }, { property: "og:title", content: "Bộ sưu tập chăm sóc da | SKINREST-BEAUTY" }, { property: "og:description", content: "Chu trình chăm sóc da thảo mộc được tuyển chọn cho làn da của bạn." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: CollectionsPage });
+function CollectionsPage() { const items = [{name:"Nghi thức Rau Má",copy:"Làm dịu, củng cố và nuôi dưỡng.",image:cleanser},{name:"Bộ Sưu Tập Rạng Rỡ",copy:"Làm sáng bề mặt và khôi phục vẻ rạng rỡ.",image:serum},{name:"Thiết Yếu Cho Hàng Rào Da",copy:"Vỗ về làn da khô và nhạy cảm.",image:cream}]; return <StoreLayout><PageHero eyebrow="CHĂM SÓC TUYỂN CHỌN" title="Bộ sưu tập" copy="Xây dựng chu trình đơn giản theo đúng nhu cầu của làn da."/><section className="collection-grid">{items.map((item) => <article key={item.name}><img src={item.image} width={768} height={960} alt={item.name}/><div><p>BỘ SƯU TẬP SKINREST-BEAUTY</p><h2>{item.name}</h2><span>{item.copy}</span><Link to="/shop">Khám phá <ArrowRight size={17}/></Link></div></article>)}</section></StoreLayout> }
