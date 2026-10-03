@@ -157,7 +157,7 @@ function AboutPage() {
 
             <div className="about-product-card">
               <div className="about-product-card__number">02</div>
-              <h3>Nước cân bằng da</h3>
+              <h3>Tinh chất cân bằng da</h3>
               <p>
                 Thông tin sản phẩm dành cho bước
                 cân bằng trong chu trình chăm sóc da.

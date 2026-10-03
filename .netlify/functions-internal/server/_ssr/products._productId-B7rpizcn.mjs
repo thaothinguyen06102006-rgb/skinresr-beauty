@@ -1,6 +1,6 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { v as ArrowLeft } from "../_libs/lucide-react.mjs";
+import { y as ArrowLeft } from "../_libs/lucide-react.mjs";
 import { i as StoreLayout, n as ProductGrid } from "./storefront-rD6pkOmu.mjs";
 import { t as products } from "./products-CWSUt8KG.mjs";
 import { t as Route } from "./products._productId-BoE2gTpe.mjs";

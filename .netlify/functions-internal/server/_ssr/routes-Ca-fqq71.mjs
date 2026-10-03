@@ -1,12 +1,12 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { _ as ArrowRight, a as Play, d as House, f as Earth, g as Beaker, i as Search, m as ChevronRight, n as Sparkles, s as Menu, t as X, u as Leaf } from "../_libs/lucide-react.mjs";
+import { _ as Beaker, a as Search, c as Menu, d as Leaf, f as House, h as ChevronRight, n as Sprout, o as Play, p as Earth, r as Sparkles, t as X, v as ArrowRight } from "../_libs/lucide-react.mjs";
 import { r as StoreFooter } from "./storefront-rD6pkOmu.mjs";
 import { t as about_skincare_default } from "./about-skincare-BBT9b5Gl.mjs";
 import { n as product_repair_cream_default, t as product_cleansing_foam_default } from "./product-repair-cream-BdXXzfSJ.mjs";
 import { n as product_portulaca_mask_default, r as product_sunscreen_default, t as product_ampoule_default } from "./product-sunscreen-Dv4Nf48W.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CMbr-qfp.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Ca-fqq71.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var new_arrival_caryophy_default = "/assets/new-arrival-caryophy-BNQUcUjZ.jpg";
@@ -36,6 +36,23 @@ function Index() {
 	const [menuOpen, setMenuOpen] = (0, import_react.useState)(false);
 	const [searchOpen, setSearchOpen] = (0, import_react.useState)(false);
 	const [videoOpen, setVideoOpen] = (0, import_react.useState)(false);
+	const storyRef = (0, import_react.useRef)(null);
+	(0, import_react.useEffect)(() => {
+		const section = storyRef.current;
+		if (!section) return;
+		if (!("IntersectionObserver" in window)) {
+			section.classList.add("is-visible");
+			return;
+		}
+		const observer = new IntersectionObserver(([entry]) => {
+			if (entry.isIntersecting) {
+				section.classList.add("is-visible");
+				observer.disconnect();
+			}
+		}, { threshold: .18 });
+		observer.observe(section);
+		return () => observer.disconnect();
+	}, []);
 	const exploreProducts = () => document.querySelector("#categories")?.scrollIntoView({ behavior: "smooth" });
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", { children: [
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
@@ -282,18 +299,77 @@ function Index() {
 			})]
 		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-			className: "story-section",
+			className: "caryophy-story",
 			id: "story",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "story-label",
-				children: "MỘT TRANG GIỚI THIỆU CÁ NHÂN"
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "story-content",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "SKINREST-BEAUTY" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "story-description",
-					children: "Caryophy là thương hiệu mỹ phẩm chăm sóc da đến từ Hàn Quốc, thành lập năm 2012 và đã đứng vững hơn 10 năm trên thị trường. Thương hiệu nổi tiếng với các sản phẩm làm dịu da, ngăn ngừa và hỗ trợ chăm sóc da mụn, được phân phối chính hãng tại Việt Nam. Điểm nổi bật của thương hiệu là định hướng sử dụng các thành phần có nguồn gốc thực vật, hướng đến sự an toàn và dịu nhẹ cho làn da."
-				})]
-			})]
+			ref: storyRef,
+			"aria-labelledby": "caryophy-story-title",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "caryophy-story__botanical caryophy-story__botanical--left",
+					"aria-hidden": "true",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sprout, { className: "caryophy-story__sprout" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Leaf, { className: "caryophy-story__leaf caryophy-story__leaf--one" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Leaf, { className: "caryophy-story__leaf caryophy-story__leaf--two" })
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "caryophy-story__botanical caryophy-story__botanical--right",
+					"aria-hidden": "true",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sprout, { className: "caryophy-story__sprout" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Leaf, { className: "caryophy-story__leaf caryophy-story__leaf--one" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Leaf, { className: "caryophy-story__leaf caryophy-story__leaf--two" })
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "caryophy-story__content",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "caryophy-story__eyebrow",
+							children: "MỘT HÀNH TRÌNH CHĂM SÓC LÀN DA"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+							id: "caryophy-story-title",
+							children: "SKINREST BEAUTY"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "caryophy-story__divider",
+							"aria-hidden": "true",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Leaf, {
+									size: 19,
+									strokeWidth: 1.25
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {})
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Khám phá vẻ đẹp từ thiên nhiên cùng Caryophy" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "caryophy-story__description",
+							children: "Caryophy là thương hiệu mỹ phẩm chăm sóc da đến từ Hàn Quốc, thành lập năm 2012, với các sản phẩm hướng đến chăm sóc, làm dịu và hỗ trợ cải thiện làn da mụn. Thương hiệu chú trọng các thành phần có nguồn gốc thực vật, mang đến giải pháp chăm sóc da nhẹ nhàng, phù hợp với nhu cầu của người tiêu dùng."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+							className: "caryophy-story__cta",
+							to: "/about",
+							children: ["KHÁM PHÁ THƯƠNG HIỆU ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { size: 17 })]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "caryophy-story__footer-rule",
+							"aria-hidden": "true",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Leaf, {
+									size: 16,
+									strokeWidth: 1.2
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {})
+							]
+						})
+					]
+				})
+			]
 		}),
 		videoOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "modal-backdrop",

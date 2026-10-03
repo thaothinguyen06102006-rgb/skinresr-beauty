@@ -375,6 +375,26 @@ var Sparkles = createLucideIcon("sparkles", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Sprout = createLucideIcon("sprout", [
+	["path", {
+		d: "M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3",
+		key: "139s4v"
+	}],
+	["path", {
+		d: "M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4",
+		key: "1dlkgp"
+	}],
+	["path", {
+		d: "M5 21h14",
+		key: "11awu3"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var X = createLucideIcon("x", [["path", {
 	d: "M18 6 6 18",
 	key: "1bl5f8"
@@ -383,4 +403,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { ArrowRight as _, Play as a, MapPin as c, House as d, Earth as f, Beaker as g, BookOpen as h, Search as i, Mail as l, ChevronRight as m, Sparkles as n, MessageCircle as o, Droplets as p, ShieldCheck as r, Menu as s, X as t, Leaf as u, ArrowLeft as v };
+export { Beaker as _, Search as a, Menu as c, Leaf as d, House as f, BookOpen as g, ChevronRight as h, ShieldCheck as i, MapPin as l, Droplets as m, Sprout as n, Play as o, Earth as p, Sparkles as r, MessageCircle as s, X as t, Mail as u, ArrowRight as v, ArrowLeft as y };

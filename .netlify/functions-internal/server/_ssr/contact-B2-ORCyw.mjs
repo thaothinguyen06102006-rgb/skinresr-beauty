@@ -1,6 +1,6 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { c as MapPin, l as Mail, o as MessageCircle } from "../_libs/lucide-react.mjs";
+import { l as MapPin, s as MessageCircle, u as Mail } from "../_libs/lucide-react.mjs";
 import { i as StoreLayout, t as PageHero } from "./storefront-rD6pkOmu.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/contact-B2-ORCyw.js
 var import_react = /* @__PURE__ */ __toESM(require_react());

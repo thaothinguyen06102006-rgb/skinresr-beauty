@@ -1,6 +1,6 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { _ as ArrowRight } from "../_libs/lucide-react.mjs";
+import { v as ArrowRight } from "../_libs/lucide-react.mjs";
 import { i as StoreLayout, t as PageHero } from "./storefront-rD6pkOmu.mjs";
 import { n as product_portulaca_mask_default, r as product_sunscreen_default, t as product_ampoule_default } from "./product-sunscreen-Dv4Nf48W.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/collections-emnQ5uG8.js

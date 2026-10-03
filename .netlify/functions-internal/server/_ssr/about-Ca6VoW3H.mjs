@@ -1,9 +1,9 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { _ as ArrowRight, h as BookOpen, n as Sparkles, p as Droplets, r as ShieldCheck, u as Leaf } from "../_libs/lucide-react.mjs";
+import { d as Leaf, g as BookOpen, i as ShieldCheck, m as Droplets, r as Sparkles, v as ArrowRight } from "../_libs/lucide-react.mjs";
 import { i as StoreLayout } from "./storefront-rD6pkOmu.mjs";
 import { t as about_skincare_default } from "./about-skincare-BBT9b5Gl.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/about-C-X2DhcB.js
+//#region node_modules/.nitro/vite/services/ssr/assets/about-Ca6VoW3H.js
 var import_jsx_runtime = require_jsx_runtime();
 function AboutPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(StoreLayout, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
@@ -111,7 +111,7 @@ function AboutPage() {
 										className: "about-product-card__number",
 										children: "02"
 									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Nước cân bằng da" }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Tinh chất cân bằng da" }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Thông tin sản phẩm dành cho bước cân bằng trong chu trình chăm sóc da." })
 								]
 							}),

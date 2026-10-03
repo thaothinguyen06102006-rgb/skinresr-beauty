@@ -3,10 +3,10 @@ import { n as require_jsx_runtime, r as require_react, t as QueryClientProvider 
 import { _ as useRouter, c as HeadContent, d as Outlet, f as lazyRouteComponent, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as Route$11 } from "./products._productId-BoE2gTpe.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-ijuwiyIh.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CjzVuMPc.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-CeIxvFMd.css";
+var styles_default = "/assets/styles-udU4OFTl.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -148,7 +148,7 @@ var Route$10 = createRootRouteWithContext()({
 			},
 			{
 				rel: "stylesheet",
-				href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700&display=swap"
+				href: "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
 			},
 			{
 				rel: "icon",
@@ -175,7 +175,7 @@ function RootComponent() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter$9 = () => import("./routes-CMbr-qfp.mjs");
+var $$splitComponentImporter$9 = () => import("./routes-Ca-fqq71.mjs");
 var Route$9 = createFileRoute("/")({
 	head: () => ({ meta: [
 		{ title: "SKINREST-BEAUTY | Góc tham khảo chăm sóc da" },
@@ -202,7 +202,7 @@ var Route$9 = createFileRoute("/")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$9, "component")
 });
-var $$splitComponentImporter$8 = () => import("./about-C-X2DhcB.mjs");
+var $$splitComponentImporter$8 = () => import("./about-Ca6VoW3H.mjs");
 var Route$8 = createFileRoute("/about")({
 	head: () => ({ meta: [{ title: "Giới thiệu | SKINREST-BEAUTY" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
